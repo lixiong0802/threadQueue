@@ -1,5 +1,7 @@
 package cn.com.threaqueue.taskdata;
 
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User: LX
@@ -10,6 +12,16 @@ public class TaskData implements ITaskData {
 
     private String name;
     private String data;
+    private int retaskCount;
+    private Map<String,String> params;
+
+    public Map<String, String> getParams() {
+        return params;
+    }
+
+    public void setParams(Map<String, String> params) {
+        this.params = params;
+    }
 
     public TaskData(String name, String data) {
         this.name = name;
@@ -32,11 +44,11 @@ public class TaskData implements ITaskData {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "TaskData{" +
-                "name='" + name + '\'' +
-                ", data='" + data + '\'' +
-                '}';
+    public int getRetaskCount() {
+        return retaskCount;
+    }
+
+    public void setRetaskCount(int retaskCount) {
+        this.retaskCount = retaskCount;
     }
 }

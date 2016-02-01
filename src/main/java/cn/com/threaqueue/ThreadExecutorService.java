@@ -1,5 +1,6 @@
 package cn.com.threaqueue;
 
+import cn.com.threaqueue.service.ITaskService;
 import cn.com.threaqueue.taskdata.TaskData;
 import cn.com.threaqueue.thread.ConsumerRunnable;
 import cn.com.threaqueue.thread.ProducerRunnable;
@@ -15,7 +16,7 @@ import java.util.concurrent.Executors;
  */
 public class ThreadExecutorService {
 
-    public static Executor executor = Executors.newFixedThreadPool(10);
+//    public static Executor executor = Executors.newFixedThreadPool(10);
 
     private static void addTask(Runnable runnable) {
 //        executor.execute(runnable);
@@ -23,13 +24,13 @@ public class ThreadExecutorService {
     }
 
 
-    public static void addProducer(TaskData taskData) {
+    public static void createProducer(TaskData taskData) {
         ProducerRunnable runnable = new ProducerRunnable(taskData);
         addTask(runnable);
     }
 
-    public static void addConsumer() {
-        ConsumerRunnable runnable = new ConsumerRunnable();
+    public static void createConsumer(ITaskService taskService) {
+        ConsumerRunnable runnable = new ConsumerRunnable(taskService);
         addTask(runnable);
     }
 

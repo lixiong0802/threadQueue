@@ -14,4 +14,9 @@ public class TaskContext {
      */
     public static int threadTaskCount = 10;
 
+    /***
+     * 任务失败，重复执行次数
+     */
+    public static int retaskCount = 10;
+
 }

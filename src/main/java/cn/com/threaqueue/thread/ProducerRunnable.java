@@ -27,6 +27,7 @@ public class ProducerRunnable implements Runnable {
 
         try {
             logger.debug(String.format("thread name :%s,task data:%s,", Thread.currentThread().getName(), taskData.toString()));
+
             QueueStorage.push(taskData);
 
         } catch (InterruptedException e) {

@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class QueueStorage {
 
-    static BlockingQueue<ITaskData> queues = new LinkedBlockingQueue<ITaskData>();
+    private static BlockingQueue<ITaskData> queues = new LinkedBlockingQueue<ITaskData>();
 
     /**
      * 生产
@@ -31,7 +31,7 @@ public class QueueStorage {
      * @return 产品
      * @throws InterruptedException
      */
-    public static  ITaskData pop() throws InterruptedException {
+    public static ITaskData pop() throws InterruptedException {
         return queues.take();
     }
 

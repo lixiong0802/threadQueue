@@ -25,7 +25,7 @@ public class Test {
                 public void run() {
                     while (true) {
                         TaskData taskData = new TaskData("" + new Random().nextInt(), "" + new Random().nextInt());
-                        ThreadExecutorService.addProducer(taskData);
+                        ThreadExecutorService.createProducer(taskData);
 
                         try {
                             Thread.sleep(1000 * new Random().nextInt(3));
@@ -39,10 +39,10 @@ public class Test {
         }
 
 
-        ThreadExecutorService.addConsumer();
-        ThreadExecutorService.addConsumer();
-        ThreadExecutorService.addConsumer();
-        ThreadExecutorService.addConsumer();
-        ThreadExecutorService.addConsumer();
+//        ThreadExecutorService.createConsumer();
+//        ThreadExecutorService.createConsumer();
+//        ThreadExecutorService.createConsumer();
+//        ThreadExecutorService.createConsumer();
+//        ThreadExecutorService.createConsumer();
     }
 }
